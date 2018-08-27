@@ -8,7 +8,7 @@ const request = require('request');
 const fireBase = require('./firebase');
 var firebaseGcm = require("./firebase");
 const Products= require('../models/Product');
-const Sells= require('../models/Videos');
+const Video= require('../models/Videos');
 const Complaints = require('../models/Complaints');
 const News= require('../models/news');
 var multer = require('multer');
@@ -73,7 +73,7 @@ router.post('/login',function (req,res) {
 //post
 router.post('/myproducts',function (req,res) {
     res.header("Access-Control-Allow-Origin", "*");
-    Sells.find({
+    Video.find({
         callphonenumbers: req.body.cellphonenumber
     }, function(err, requests) {
 
@@ -236,13 +236,13 @@ router.post('/newsDelete',function (req,res,next) {
 
 });
 
-router.post('/sell',function (req,res,next) {
+router.post('/video',function (req,res,next) {
     res.header("Access-Control-Allow-Origin", "*");
-    console.log("regsiter sellls");
-    Sells.create(req.body).then(function (users) {
+    console.log("register video");
+    Video.create(req.body).then(function (users) {
 
 
-        res.status(201).send({message:'Succesfully sent to the admin'});
+        res.status(201).send({message:'Succesfully created'});
     }).catch(next);
 
 });
@@ -252,7 +252,7 @@ router.get('/sell',function (req,res,next) {
     res.header("Access-Control-Allow-Origin", "*");
     console.log("sellls get ");
 
-    Sells.find({
+    Video.find({
         status: '0'
     }, function(err, requests) {
 
@@ -271,7 +271,7 @@ router.get('/sellsALL',function (req,res,next) {
     res.header("Access-Control-Allow-Origin", "*");
     console.log("sellls get ");
 
-    Sells.find({
+    Video.find({
 
     }, function(err, requests) {
 

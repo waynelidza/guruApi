@@ -3,10 +3,14 @@ const Schema = mongoose.Schema;
 
 //create user schema
 
-const  sellsSchema = new Schema({
+const  videoSchema = new Schema({
     name:{
         type:String,
         required:[false,'name  field is required']
+    },
+    tittle:{
+        type:String,
+        required:[false,'tittle  field is required']
     },
     Dateuploaded:{
         type:Date,
@@ -23,5 +27,5 @@ const  sellsSchema = new Schema({
 
 });
 
-const videos = mongoose.model('videos',sellsSchema);
+const videos = mongoose.model('videos',videoSchema);
 module.exports= videos;
