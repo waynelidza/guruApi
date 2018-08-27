@@ -236,11 +236,20 @@ router.post('/newsDelete',function (req,res,next) {
 
 });
 
-router.post('/video',function (req,res,next) {
+router.post('/videos',function (req,res,next) {
     res.header("Access-Control-Allow-Origin", "*");
     console.log("register video");
     Video.create(req.body).then(function (users) {
+        var gcms = []
+        console.log("notify admins");
+        User.find({}).then(function (users) {
+            var usertables = [] = users;
+            usertables.forEach(function (table) {
 
+                gcms.push(table.GCMID);
+
+
+            });
 
         res.status(201).send({message:'Succesfully created'});
     }).catch(next);
