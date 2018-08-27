@@ -15,7 +15,7 @@ app.use(bodyPaser.json());
 app.use(routes);
 
 //connect to mongodb
-mongoose.connect("mongodb://localhost/ivy");
+mongoose.connect("mongodb://localhost/gurumaya");
 mongoose.Promise = global.Promise;
 
 

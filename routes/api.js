@@ -13,7 +13,7 @@ const Complaints = require('../models/Complaints');
 const News= require('../models/news');
 var multer = require('multer');
 var bodyParser = require('body-parser');
-var upload = multer({ dest: '/opt/lampp/htdocs/uploads/' });
+var upload = multer({ dest: 'uploads' });
 var path;
 router.use(bodyParser.json());
 
@@ -174,10 +174,11 @@ router.post('/register',function (req,res,next) {
     User.create(req.body).then(function (users) {
 
 
-       res.status(201).send({message:'Succesfully registered please  wait for the admin to approve your account'});
+       res.status(201).send({message:'Your are now Subscribed to Guru Welcome '});
    }).catch(next);
 
 });
+
 router.post('/news',function (req,res,next) {
     res.header("Access-Control-Allow-Origin", "*");
     console.log("news");
