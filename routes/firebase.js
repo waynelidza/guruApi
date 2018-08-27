@@ -1,10 +1,10 @@
 var admin = require("firebase-admin");
 
-var serviceAccount = require("../ivyveg-386ae-firebase-adminsdk-d4epj-8707040091.json");
+var serviceAccount = require("../guru-907a1-firebase-adminsdk-ht2x8-f3c47e39b7.json");
 console.log('FIRESBASE STARTED');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://ivyveg-386ae.firebaseio.com"
+    databaseURL: "https://guru-907a1.firebaseio.com"
 });
  var gcm;
 // This registration token comes from the client FCM SDKs.
