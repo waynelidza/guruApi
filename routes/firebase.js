@@ -23,7 +23,7 @@ var registrationTokens = [
 //Send a message to the device corresponding to the provided
 //registration token.
 
- var sendmessages = function sendGcmMesage(registrationTokens) {
+ var sendmessagesVideo = function sendGcmMesage(registrationTokens) {
 
     admin.messaging().sendToDevice(registrationTokens, payload)
         .then(function(response) {
@@ -36,11 +36,11 @@ var registrationTokens = [
         });
 
 }
-var sendmessagesApproval = function sendGcmMesage(registrationTokens) {
+var sendmessages = function sendGcmMesage(registrationTokens) {
     var payloads = {
         notification: {
-            title: 'New Customer registered needs your approval to start buying',
-            body: 'Admin'
+            title: '** Haiye ** Haiye new video ',
+            body: 'Guru'
         }
     };
 
@@ -146,7 +146,7 @@ var sendmessagestoCustomer = function sendGcmMesage(GcmId) {
 }
 module.exports = { registrationTokens: "registrationTokens" };
 module.exports.sendmessages = sendmessages;
-module.exports.sendmessagesApproval = sendmessages;
+module.exports.sendmessagesVideo = sendmessages;
 module.exports.sendmessagestoCustomer = sendmessagestoCustomer;
 module.exports.sendmessagesfodeviler = sendmessagesfodeviler;
 module.exports.sendmessagesNews = sendmessagesNews;
