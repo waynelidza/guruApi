@@ -243,7 +243,7 @@ router.post('/videos',function (req,res,next) {
 
         console.log("notify admins");
 
-            fireBase.sendmessagesVideo(fireBase.registrationTokens);
+
         res.status(201).send({message:'Succesfully created'});
     });
     User.find({}).then(function (users){
@@ -283,9 +283,9 @@ router.get('/sell',function (req,res,next) {
 
 
 
-router.get('/sellsALL',function (req,res,next) {
+router.get('/videos',function (req,res,next) {
     res.header("Access-Control-Allow-Origin", "*");
-    console.log("sellls get ");
+    console.log("videos ");
 
     Video.find({
 
